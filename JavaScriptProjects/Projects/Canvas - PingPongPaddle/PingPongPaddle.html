@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../WebProject/style.css" rel="stylesheet" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <br />
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var paddleHeight = 80;
+        var paddleWidth = 12;
+        var paddleY1 = canvas.height / 2 - paddleHeight / 2;
+        var paddleY2 = paddleY1;
+        var paddleX1 = 5;
+        var ballX = 300;
+        var ballY = 200;
+        var ballRadius = 10;
+        var ballSpeedX = 2;
+        var ballSpeedY = 2;
+        var paddleX2 = canvas.width - paddleX1 - paddleWidth;
+        var score1 = 0, score2 = 0;
+        var upPressed = false, downPressed = false, WPressed = false, SPressed = false;
+
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        function drawPaddle(paddleX, paddleY) {
+            ctx.beginPath();
+            ctx.fillStyle = "turquoise";
+            ctx.strokeStyle = "black";
+            ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function movePaddle() {
+            if (WPressed && paddleY1 > 5) {
+                paddleY1 -= 2;
+            }
+            if (SPressed && paddleY1 < canvas.height - paddleHeight - 5) {
+                paddleY1 += 2;
+            }
+            if (upPressed && paddleY2 > 5) {
+                paddleY2 -= 2;
+            }
+            if (downPressed && paddleY2 < canvas.height - paddleHeight - 5) {
+                paddleY2 += 2;
+            }
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            fillStyle = "green";
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function moveBall() {
+            if (ballX > canvas.width - ballRadius) {
+                //ballSpeedX = -ballSpeedX;
+                score1++;
+                moveBallToCenter();
+            }
+
+            if (ballX < 0 + ballRadius) {
+                score2++;
+                moveBallToCenter();
+            }
+
+            if (((ballX > paddleX1 && ballX < paddleX1 + paddleWidth) &&
+                (ballY > paddleY1 && ballY < paddleY1 + paddleHeight)) ||
+                ((ballX > paddleX2 && ballX < paddleX2 + paddleWidth) &&
+                (ballY > paddleY2 && ballY < paddleY2 + paddleHeight))) {
+                ballSpeedX = -ballSpeedX;
+            }
+            
+
+            if (ballY > canvas.height - ballRadius || ballY < 0 + ballRadius) {
+                ballSpeedY = -ballSpeedY;
+            }
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            if (ballY + ballSpeedY < ballRadius) {
+                ballSpeedY = -ballSpeedY;
+            }
+        }
+
+        function moveBallToCenter() {
+            ballX = 300;
+            ballY = 200;
+        }
+
+        function drawScore(score, x) {
+            ctx.beginPath();
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "Black";
+            ctx.fillText("Score: " + score, x, 35);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawPaddle(paddleX1, paddleY1);
+            drawPaddle(paddleX2, paddleY2);
+            movePaddle();
+            drawBall();
+            moveBall();
+            drawScore(score1, 13);
+            drawScore(score2, canvas.width - 90);
+        }
+
+        function keyDownHandler(e) {
+            if (e.keyCode == 38) { upPressed = true; }
+            if (e.keyCode == 40) { downPressed = true; }
+            if (e.keyCode == 87) { WPressed = true; }
+            if (e.keyCode == 83) { SPressed = true; }
+        }
+
+        function keyUpHandler(e) {
+            if (e.keyCode == 38) { upPressed = false; }
+            if (e.keyCode == 40) { downPressed = false; }
+            if (e.keyCode == 87) { WPressed = false; }
+            if (e.keyCode == 83) { SPressed = false; }
+        }
+
+        setInterval(draw, 10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 40px;
+            background: #666;
+        }
+
+        #my_canvas {
+            background: #FFF;
+            border: #000 1px solid;
+        }
+    </style>
+    <script>
+        function draw() {
+            var ctx = document.getElementById('my_canvas').getContext('2d');
+
+            ctx.moveTo(90, 50);
+            ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+            ctx.moveTo(200, 20);
+            ctx.bezierCurveTo(50, 90, 200, 100, 250, 40);
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+        }
+
+        window.onload = draw;
+    </script>
+</head>
+<body>
+    <canvas id="my_canvas" width="700" height="500"></canvas>
+</body>
+</html>

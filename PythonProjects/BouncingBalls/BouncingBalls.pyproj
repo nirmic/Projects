@@ -1,0 +1,49 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34d42cc7-ee66-4d18-baec-8e0ba7503d9d}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>advanced (with inheritance)\main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>BouncingBalls</Name>
+    <RootNamespace>BouncingBalls</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="advanced %28with inheritance%29\ball.py" />
+    <Compile Include="advanced %28with inheritance%29\main.py" />
+    <Compile Include="basic %28no classes%29\main.py" />
+    <Compile Include="intermediate %28with objects%29\ball.py" />
+    <Compile Include="intermediate %28with objects%29\main.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="advanced %28with inheritance%29\ball.png" />
+    <Content Include="basic %28no classes%29\ball.png" />
+    <Content Include="intermediate %28with objects%29\ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="advanced %28with inheritance%29\" />
+    <Folder Include="basic %28no classes%29\" />
+    <Folder Include="intermediate %28with objects%29\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

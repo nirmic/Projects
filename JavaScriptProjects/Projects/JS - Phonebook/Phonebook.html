@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PhoneBook</title>
+</head>
+
+<body>
+    <h1 align="center">PhoneBook</h1>
+    <table border="2" align="center" cellpadding="10">
+        <tr>
+            <td align="center">
+                <div>
+                    <label>Name:</label>
+                    <input id="name" type="text">
+                    <button onclick="AddName()">Add</button>
+                    <br>
+                    <label>Names:</label>
+                    <br>
+                    <textarea id="nameTextArea" rows="5"></textarea>
+                </div>
+            </td>
+            <td align="center">
+                <div>
+                    <label>PhoneNumber:</label>
+                    <input id="phone" type="text">
+                    <button onclick="AddPhone()">Add</button>
+                    <br>
+                    <label>Phones:</label>
+                    <br>
+                    <textarea id="phoneTextArea" rows="5"></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <label>Search</label>
+                <input id="nameToSearch" type="text">
+                <button onclick="Search()">Search</button>
+                <br>
+                <label id="searchResult"></label>
+            </td>
+        </tr>
+
+    </table>
+
+
+    <script src="./Phonebook.js"></script>
+</body>
+
+</html>

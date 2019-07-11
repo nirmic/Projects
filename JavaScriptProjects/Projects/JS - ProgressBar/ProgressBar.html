@@ -1,0 +1,52 @@
+<style>
+    #pbc {
+        width: 250px;
+        height: 16px;
+        background: #000;
+        border: #000 1px solid;
+    }
+
+        #pbc > #pb {
+            position: relative;
+            top: 0px;
+            background: #0FF;
+            width: 0%;
+            height: 16px;
+            color: #0FF;
+            text-align: center;
+        }
+
+        #pbc > #pbt {
+            position: relative;
+            top: -19px;
+            text-align: center;
+            color: #FFF;
+            padding: 4px;
+            height: 8px;
+            font-size: 12px;
+        }
+</style>
+<div id="pbc">
+    <div id="pb"></div>
+    <div id="pbt"></div>
+</div>
+
+<script>
+    var pbt = document.getElementById("pbt");
+    var pb = document.getElementById("pb");
+    var progressValue = 0;
+
+    function UpdateProgressBar() {
+        progressValue += 9;
+        if (progressValue >= 100) {
+            progressValue = 100;
+            clearInterval(myTimer);
+        }
+        pb.style.width = progressValue + "%";
+        pbt.innerHTML = progressValue + "%";
+    }
+    UpdateProgressBar();
+    var myTimer = setInterval(UpdateProgressBar, 500);
+
+    
+</script>

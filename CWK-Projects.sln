@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JavaScriptProjects", "JavaScriptProjects\", "{7E471DC4-1AB3-482F-9BE8-6F70D29FD047}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59255"
+		Debug.AspNetCompiler.PhysicalPath = "JavaScriptProjects\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59255\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59255"
+		Release.AspNetCompiler.PhysicalPath = "JavaScriptProjects\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59255\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59255"
+		SlnRelativePath = "JavaScriptProjects\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PythonProjects", "PythonProjects", "{E480E7D9-1090-44B9-98E1-3CBB1BB95B11}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BouncingBalls", "PythonProjects\BouncingBalls\BouncingBalls.pyproj", "{34D42CC7-EE66-4D18-BAEC-8E0BA7503D9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3259EC2-D6F4-4660-9C5E-C82A85D7E935}"
+	ProjectSection(SolutionItems) = preProject
+		push2github.bat = push2github.bat
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Pygame Sprite Sheet Animation", "PythonProjects\Pygame Sprite Sheet Animation\Pygame Sprite Sheet Animation.pyproj", "{36EC9B3E-2753-4A4D-85CB-ED8974E72F58}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Bubble Pop", "PythonProjects\Bubble Pop\Bubble Pop.pyproj", "{657C5442-EF12-481F-A1FC-724EF6BCCFD4}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Pyramid", "PythonProjects\Pyramid\Pyramid.pyproj", "{E55606F7-83B6-4C6B-8A35-A74DD3EDEA9A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Dungeon Crawler", "PythonProjects\Dungeon Crawler\Dungeon Crawler.pyproj", "{1DBC862B-37C2-4507-B8BC-B031B89840AC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Infinite Platformer", "PythonProjects\Infinite Platformer\Infinite Platformer.pyproj", "{B8AB75F8-56E5-4531-AD48-96ABB01F6DA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScriptProjects", "JavaScriptProjects", "{AF50A53F-BB97-404F-9E7E-4AA7D90F8685}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SqlLiteIntro", "PythonProjects\SqlLiteIntro\SqlLiteIntro.pyproj", "{19A239C7-3DA6-4BE0-A75C-F3833506018D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E471DC4-1AB3-482F-9BE8-6F70D29FD047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E471DC4-1AB3-482F-9BE8-6F70D29FD047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E471DC4-1AB3-482F-9BE8-6F70D29FD047}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E471DC4-1AB3-482F-9BE8-6F70D29FD047}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{34D42CC7-EE66-4D18-BAEC-8E0BA7503D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D42CC7-EE66-4D18-BAEC-8E0BA7503D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36EC9B3E-2753-4A4D-85CB-ED8974E72F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36EC9B3E-2753-4A4D-85CB-ED8974E72F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657C5442-EF12-481F-A1FC-724EF6BCCFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657C5442-EF12-481F-A1FC-724EF6BCCFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55606F7-83B6-4C6B-8A35-A74DD3EDEA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55606F7-83B6-4C6B-8A35-A74DD3EDEA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBC862B-37C2-4507-B8BC-B031B89840AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBC862B-37C2-4507-B8BC-B031B89840AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AB75F8-56E5-4531-AD48-96ABB01F6DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AB75F8-56E5-4531-AD48-96ABB01F6DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A239C7-3DA6-4BE0-A75C-F3833506018D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A239C7-3DA6-4BE0-A75C-F3833506018D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E471DC4-1AB3-482F-9BE8-6F70D29FD047} = {AF50A53F-BB97-404F-9E7E-4AA7D90F8685}
+		{34D42CC7-EE66-4D18-BAEC-8E0BA7503D9D} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{36EC9B3E-2753-4A4D-85CB-ED8974E72F58} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{657C5442-EF12-481F-A1FC-724EF6BCCFD4} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{E55606F7-83B6-4C6B-8A35-A74DD3EDEA9A} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{1DBC862B-37C2-4507-B8BC-B031B89840AC} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{B8AB75F8-56E5-4531-AD48-96ABB01F6DA1} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+		{19A239C7-3DA6-4BE0-A75C-F3833506018D} = {E480E7D9-1090-44B9-98E1-3CBB1BB95B11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B227FFA3-1F47-4018-8832-0E2F5D7A9B03}
+	EndGlobalSection
+EndGlobal

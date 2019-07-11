@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 40px;
+            background: #666;
+        }
+
+        #my_canvas {
+            background: #FFF;
+            border: #000 1px solid;
+        }
+    </style>
+    <script>
+        function draw() {
+            var ctx = document.getElementById('my_canvas').getContext('2d');
+
+            ctx.arc(350, 250, 100, 0, 3.14, false);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "orange";
+            ctx.stroke();
+            ctx.fillStyle = "turquoise";
+            ctx.fill();
+        }
+
+        window.onload = draw;
+    </script>
+</head>
+<body>
+    <canvas id="my_canvas" width="700" height="500"></canvas>
+</body>
+</html>

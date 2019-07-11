@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var upPressed = false, downPressed = false, leftPressed = false, rightPressed = false;
+        var score = 0;
+
+        var Bird = {
+            x : 10,
+            y : canvas.height / 2,
+            width : 20,
+            height : 20,
+
+            Draw: function () {
+                ctx.beginPath();
+                ctx.fillStyle = "turquoise";
+                ctx.rect(this.x, this.y, this.width, this.height);
+                ctx.fill();
+                ctx.closePath();
+            },
+
+            Move: function() {
+                if (upPressed && this.y > this.height - 20) {
+                    this.y -= 2;
+                }
+                if (downPressed && this.y < canvas.height - this.height) {
+                    this.y += 2;
+                }
+                if (leftPressed && this.x > 0) {
+                    this.x -= 2;
+                }
+                if (rightPressed && this.x < canvas.width - this.width) {
+                    this.x += 2;
+                }
+            }
+        }
+
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        function keyDownHandler(e) {
+            if (e.keyCode == 38) { upPressed = true; }
+            if (e.keyCode == 40) { downPressed = true; }
+            if (e.keyCode == 37) { leftPressed = true; }
+            if (e.keyCode == 39) { rightPressed = true; }
+        }
+
+        function keyUpHandler(e) {
+            if (e.keyCode == 38) { upPressed = false; }
+            if (e.keyCode == 40) { downPressed = false; }
+            if (e.keyCode == 37) { leftPressed = false; }
+            if (e.keyCode == 39) { rightPressed = false; }
+        }
+
+        function DrawBird() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            Bird.Draw();
+            Bird.Move();
+        }
+
+        function Obstacle(upY, upHeight, downY, downHeight) {
+            this.x = canvas.width;
+            this.width = 10;
+            this.upY = upY;
+            this.upHeight = upHeight;
+            this.downY = downY;
+            this.downHeight = downHeight;
+
+            this.Draw = function () {
+                ctx.beginPath();
+                ctx.fillStyle = "green";
+                ctx.rect(this.x - this.width, this.upY, this.width, this.upHeight);
+                ctx.rect(this.x - this.width, this.downY, this.width, this.downHeight);
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+z        
+
+        function CreateObstacle() {
+            var gap = Bird.height * 2;
+            var bar1 = Math.floor(Math.random() * (canvas.height - gap));
+            var bar2 = Math.floor(Math.random() * (canvas.height - gap - bar1));
+            var obstacle = new Obstacle(0, bar1, canvas.height - bar2, bar2);
+            obstacles.push(obstacle);
+        }
+
+        function DrawObstacles() {
+            var obsSpeed = 1;
+            for (var i = 0; i < obstacles.length; i++) {
+                obstacles[i].x -= obsSpeed;
+                obstacles[i].Draw();
+                if (obstacles[i].x < 0) {
+                    score++;
+                }
+            }
+        }
+
+        var gameOver = false;
+
+        function ColisionDetection() {
+            for (var i = 0; i < obstacles.length; i++) {
+                if (((((Bird.x + Bird.width) > obstacles[i].x)) && (Bird.x < obstacles[i].x)) &&
+                    ((Bird.y <= obstacles[i].upHeight) || (Bird.y + Bird.height >= obstacles[i].downY - 1))) {
+                    gameOver = true;
+                }
+            }
+        }
+
+        var refreshCounter = 0;
+
+        function Score() {
+            ctx.beginPath();
+            ctx.fillStyle = "Blue";
+            ctx.fillText("Score: " + score, 20, 30);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function RefreshScreen() {
+            if (gameOver == false) {
+                DrawBird();
+                DrawObstacles();
+                ColisionDetection();
+                Score();
+                if ((refreshCounter % 100) == 0) {
+                    CreateObstacle();
+                }
+                refreshCounter++;
+                
+            }
+        }
+
+        setInterval(RefreshScreen, 10);
+
+    </script>
+</body>
+</html>

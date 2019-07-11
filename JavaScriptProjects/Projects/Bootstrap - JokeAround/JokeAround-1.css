@@ -1,0 +1,26 @@
+﻿/* Styling for carousel joke text */
+.joke-text {
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* flex-container is new in CSS3, it simplifies the vertical+horizontal alignment of items and automatically makes the contents responsive.  We're using it here to apply styling to the items inside the carousel. */
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.flex-container > h1 {
+    color: white;
+}
+
+.flex-container > img {
+    width: 25rem;
+    height: 25rem;
+    padding-bottom: 3rem;
+}

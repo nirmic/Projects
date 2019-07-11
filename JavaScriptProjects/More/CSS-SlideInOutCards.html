@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+       div#box1 {
+           background: #9DCEFF;
+           width: 400px;
+           height: 200px;
+           border-radius: 7px;
+           margin: 10px;
+           position: absolute;
+           top: 50px;
+           left: -500px;
+       }
+        div#box2 {
+            background: #9DCEFF;
+            width: 400px;
+            height: 200px;
+            border-radius: 7px;
+            margin: 10px;
+            position: absolute;
+            top: 50px;
+            left: -500px;
+        }
+    </style>
+    <script>
+        function SlideInOut(elementID, leftTransition) {
+            var elem = document.getElementById(elementID);
+            elem.style.transition = "left 2.0s linear 0s";
+            elem.style.left = leftTransition;
+        }
+            
+    </script>
+</head>
+<body>
+    <button onclick="SlideInOut('box1', '1300px');">Slide In: Tamir's question</button>
+    <button onclick="SlideInOut('box1', '-500px');">Slide Out: Tamir's question</button>
+    <button onclick="SlideInOut('box2', '0px');">Slide In: Shashik's answer</button>
+    <button onclick="SlideInOut('box2', '-500px');">Slide Out: Shashik's answer</button>
+    <div id="box1">Hello Shashik Jordan. I dont really like you. Why do we have to eat the same thing every day!</div>
+    <div id="box2">Because it is good for you.</div>
+</body>
+</html>

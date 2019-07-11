@@ -1,0 +1,70 @@
+﻿<html lang="en">
+
+<head>
+    <!-- Required meta tags for Bootstrap and JQuery -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS imports -->
+    <link href="./JokeAround-1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.css">
+
+    <!-- JS Imports -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.js"></script>
+    <script>
+        // We've renamed the JQueryUI 'tooltip' and 'buAdd a Random Color to the Sequencetton' classes to 'uitooltip' and 'uibutton' so that they won't conflict with Bootstrap's 'tooltip' and 'button' classes.
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <!-- Bootstrap Carousel -->
+    <h1 class="joke-text">Hover over the thumbnail to view the punchlines!</h1>
+    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <!-- the 'active' class tells the carousel which slide to start on -->
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="flex-container">
+                    <h1 class="joke-text">What do you call an alligator in a vest?</h1>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/American_Alligator_-_Florida_Everglades.jpg" alt="Alligator" title="An investigator">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="flex-container">
+                    <h1 class="joke-text">What did the horse say when it fell down?</h1>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Silver_Champagne_horse.jpg" alt="Horse" title="Help, I've fallen and I can't giddy up!">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="flex-container">
+                    <h1 class="joke-text">Why did the bicycle fall over?</h1>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxqwfhp8JFfm21wB3hhw-xPbUrVRUmiiRrbMpwugcT7ARHW6Bimg" alt="Bicycle" title="Because it was two tired!">
+                </div>
+            </div>
+        </div>
+
+        <!-- Left+Right Carousel Buttons -->
+        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</body>
+
+</html>

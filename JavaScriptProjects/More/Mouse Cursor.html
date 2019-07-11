@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Menu Button</title>
+    <style>
+        #cpBtn {
+            float: left;
+            width: 20px;
+            height: 24px;
+            background: linear-gradient(#FFF, #DDD);
+            border: #AAA 1px solid;
+            border-radius: 2px;
+            padding: 2px 5px;
+            cursor: pointer;
+            transition: border 0.3s linear 0s;
+        }
+        #cpBtn:hover{
+            border: #06F 1px solid;
+        }
+            #cpBtn:hover div{
+                background: #06F;
+            }
+            #cpBtn > div {
+                width: 20px;
+                height: 4px;
+                background: #333;
+                margin: 3px 0px;
+                border-radius: 4px;
+                transition: background 0.3s linear 0s;
+            }
+    </style>
+    <script>
+        function hideMe() {
+            console.log("hideMe()");
+            var b = document.getElementById('cpBtn');
+            b.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div onclick="hideMe()" id="cpBtn">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Site's Title</title>
+</head>
+<body>
+    <canvas id="myDrawing" width="400" height="400" style="border:1px solid #0ff"></canvas>
+    <button onclick="Dance()">Make me Dance</button>
+    <script>
+        var canvas = document.getElementById("myDrawing");
+        var ctx = canvas.getContext("2d");
+
+        function DrawMouth() {
+        
+        //Mouth
+        ctx.beginPath();
+        ctx.arc(200, 135, 15, 0, 1 * Math.PI);
+        ctx.stroke();
+       
+
+        }
+
+        function DrawBody()
+            {
+            var size = 53
+            var Y = 300
+            //Body
+            ctx.beginPath();
+            ctx.arc(200, Y, size, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(200, Y - 92, size - 7, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(200, Y - 176, size - 14, 0, 2 * Math.PI);
+            ctx.stroke();
+
+        }
+        function DrawEyes() {
+            //Eyes
+            ctx.beginPath();
+            ctx.arc(185, 120, 9, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(215, 120, 9, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(185, 120, 3, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(215, 120, 3, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function DrawHands() {
+            //Hands
+            ctx.beginPath();
+            ctx.moveTo(110, 160);
+            ctx.lineTo(160, 200);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(240, 200);
+            ctx.lineTo(290, 160);
+            ctx.stroke();
+            //Hat
+            ctx.rect(175, 35, 50, 50);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(150, 85);
+            ctx.lineTo(250, 85);
+            ctx.stroke();
+
+            ctx.rect(187, 50, 25, 25);
+            ctx.stroke();
+
+            //Ground
+            ctx.rect(0, 355, 400, 46);
+            ctx.stroke();
+        }
+
+
+        function DrawSnowman() {
+            DrawBody();
+            DrawEyes();
+            DrawHands();
+            DrawMouth();
+        }
+
+        DrawSnowman();
+
+        function Dance() {
+
+
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿.board {
+    background: #CCC;
+    border: #999 1px solid;
+    width: 800px;
+    height: 540px;
+    padding: 24px;
+    margin: 0px auto;
+}
+
+.card {
+    background: lightblue;
+    border: #000 1px solid;
+    width: 71px;
+    height: 71px;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    font-size: 64px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.flip {
+    transform: rotateY( 360deg );
+    transition: transform 0.5s;
+}

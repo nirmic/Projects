@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b8ab75f8-56e5-4531-ad48-96abb01f6da1}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>advanced\main.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="advanced\main.py" />
+    <Compile Include="advanced\platforms.py" />
+    <Compile Include="advanced\player.py" />
+    <Compile Include="advanced\setupdb.py" />
+    <Compile Include="advanced\sprite_loader.py" />
+    <Compile Include="basic\main.py" />
+    <Compile Include="basic\platforms.py" />
+    <Compile Include="basic\player.py" />
+    <Compile Include="intermediate\main.py" />
+    <Compile Include="intermediate\platforms.py" />
+    <Compile Include="intermediate\player.py" />
+    <Compile Include="intermediate\sprite_loader.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="advanced\images\grassHalf.png" />
+    <Content Include="advanced\images\p1_spritesheet.png" />
+    <Content Include="advanced\images\p1_spritesheet.txt" />
+    <Content Include="basic\images\grassHalf.png" />
+    <Content Include="basic\images\p1_hurt.png" />
+    <Content Include="basic\images\p1_jump.png" />
+    <Content Include="intermediate\images\grassHalf.png" />
+    <Content Include="intermediate\images\p1_spritesheet.png" />
+    <Content Include="intermediate\images\p1_spritesheet.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="advanced\" />
+    <Folder Include="advanced\images\" />
+    <Folder Include="basic" />
+    <Folder Include="basic\images" />
+    <Folder Include="intermediate\" />
+    <Folder Include="intermediate\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

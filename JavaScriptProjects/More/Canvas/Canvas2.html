@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 40px;
+            background: #666;
+        }
+
+        #my_canvas {
+            background: #FFF;
+            border: #000 1px solid;
+        }
+    </style>
+    <script>
+        function draw() {
+            var ctx = document.getElementById('my_canvas').getContext('2d');
+
+            ctx.lineWidth = 20;
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.miterLimit = 1;
+            ctx.setLineDash([20])
+
+            ctx.beginPath();
+            ctx.moveTo(150, 150);
+            ctx.lineTo(240, 240);
+            ctx.lineTo(300, 130);
+            ctx.moveTo(320, 100);
+            ctx.lineTo(340, 60);
+            ctx.stroke();
+        }
+
+        window.onload = draw;
+    </script>
+</head>
+<body>
+    <canvas id="my_canvas" width="700" height="500"></canvas>
+</body>
+</html>

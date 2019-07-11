@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 40px;
+            background: #0c0;
+        }
+
+        #my_canvas {
+            background: #f7ff00;
+            border: #000 1px solid;
+        }
+    </style>
+    <script>
+        function draw() {
+            var ctx = document.getElementById('my_canvas').getContext('2d');
+            var g1 = ctx.createLinearGradient(0, 0, 200, 0);
+            g1.addColorStop(0, "blue");
+            g1.addColorStop(0.2, "yellow");
+            g1.addColorStop(1, "magenta");
+            ctx.fillStyle = g1;
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 10;
+            ctx.fillRect(0, 0, 200, 200);
+            ctx.strokeRect(0, 0, 200, 200);
+
+            var g2 = ctx.createRadialGradient(350, 100, 0, 350, 100, 200);
+            g2.addColorStop(0, "black");
+            g2.addColorStop(0.1, "magenta");
+            g2.addColorStop(0.5, "yellow");
+            g2.addColorStop(1, "black");
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = g2;
+            ctx.fillRect(250, 0, 200, 200);
+            ctx.strokeRect(250, 0, 200, 200);
+
+        }
+
+        window.onload = draw;
+    </script>
+</head>
+<body>
+    <canvas id="my_canvas" width="700" height="500"></canvas>
+</body>
+</html>
